@@ -140,9 +140,12 @@ class ViewController: UIViewController {
         
         
         
+        
+        
+        
+        
         //        EXERCISES Home Work
         //        EXERCISE_1
-        
         func universal (a: Int, b: Int) {
             print (a + b)
         }
@@ -166,29 +169,46 @@ class ViewController: UIViewController {
         
         
         //        EXERCISE_2
-        
-        func digitSum(var number: Int) -> Int {
+        func digitSum(number: Int) -> Int {
             var number = number
             var sum = 0
             while number > 0 {
                 sum += number % 10
                 number /= 10
             }
-            
-//            ДОБАВИТЬ ПРОВЕРКУ!!!
-//            if  number  >= 1000 && number <= 9999 {
-//                print("Number has four digits")
-//            } else {
-//                print("Number does not match")
-//            }
-            
+            number = 1234
+            if  number >= 1000 && number <= 9999 {
+                print("Number has four digits")
+            } else {
+                print("Number does not match")
+            }
             return sum
         }
-        print(digitSum(var: 1234))
+        print(digitSum(number: 1234))
+        
         
         //        EXERCISE_3
+        func raisingNumberToPower (raisingNumber: Int, power: Int) {
+            let resultRaisingNumberToPower = Int(pow(Double(raisingNumber), Double(power)))
+            print(resultRaisingNumberToPower)
+        }
+        raisingNumberToPower(raisingNumber: 5, power: 2)
+        
+        
+        // EXERCISE_4
+        func calculateFactorial(of factorialNumber: Int) -> Int {
+            if factorialNumber == 1 {
+                return 1
+            } else {
+                return factorialNumber * calculateFactorial(of: factorialNumber - 1)
+            }
+        }
+        
+        let resultFactorial = calculateFactorial(of: 5)
+        print(resultFactorial)
         
     }
 }
+
 
 
